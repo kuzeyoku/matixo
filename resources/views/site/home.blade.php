@@ -1,0 +1,10 @@
+@extends('site.layouts.main')
+@section("content")
+    @include("site.layouts.slider")
+    @include("site.layouts.categories")
+    @include("site.layouts.featured")
+    @include("site.layouts.campaign")
+    @include("site.layouts.whyus")
+    @include("site.layouts.stats")
+    @include("site.layouts.references")
+@endsection

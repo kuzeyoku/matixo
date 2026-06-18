@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin
+Disallow: /yorum
+
+Sitemap: https://www.matixo.com.tr/sitemap.xml

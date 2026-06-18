@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MATIXO - Açık Hava Bilim ve Matematik Parkları, Montessöri Materyalleri, Müze Ekipmanları, Kent Mobilyaları ve Ahşap Dekoratif Ürünler. Özel üretim eğitim projeleri için doğru adres.">
+  <meta name="keywords" content="açık hava bilim parkı, matematik parkı, montessöri materyalleri, müze ekipmanları, kent ekipmanları, eğitim parkları, müze binaları">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="MATIXO">
+  <title>MATIXO | Açık Hava Bilim & Matematik Parkları, Müze Ekipmanları</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.matixo.com/">
+  <meta property="og:title" content="MATIXO | Eğitim & Müze Ekipmanları">
+  <meta property="og:description" content="Açık Hava Bilim Parkları, Matematik Müzeleri, Montessöri Materyalleri ve daha fazlası. Özel üretim eğitim projeleri.">
+  <meta property="og:image" content="https://www.matixo.com/images/og-image.jpg">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MATIXO | Eğitim & Müze Ekipmanları">
+  <meta name="twitter:description" content="Açık Hava Bilim Parkları, Matematik Müzeleri ve özel üretim eğitim ekipmanları.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.matixo.com/">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MATIXO",
+    "url": "https://www.matixo.com",
+    "logo": "https://www.matixo.com/images/logo.png",
+    "description": "Açık Hava Bilim Parkları, Matematik Müzeleri, Montessöri Materyalleri ve Müze Ekipmanları üreticisi.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "TR",
+      "addressLocality": "İstanbul"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+90-555-555-55-55",
+      "contactType": "customer service",
+      "availableLanguage": "Turkish"
+    },
+    "sameAs": [
+      "https://www.instagram.com/matixo",
+      "https://www.linkedin.com/company/matixo"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- Sayfa Yükleme Çubuğu -->
+<div class="page-loader"></div>
+
+<!-- ===================================
+     Üst Bilgi Çubuğu
+     =================================== -->
+<div class="topbar d-none d-md-block">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-3">
+        <a href="tel:+905555555555"><i class="bi bi-telephone-fill me-1"></i>+90 555 555 55 55</a>
+        <a href="mailto:info@matixo.com"><i class="bi bi-envelope-fill me-1"></i>info@matixo.com</a>
+      </div>
+      <div class="d-flex gap-3">
+        <span><i class="bi bi-clock me-1"></i>Pzt–Cum: 09:00–18:00</span>
+        <a href="https://wa.me/905555555555" target="_blank" rel="noopener">
+          <i class="bi bi-whatsapp me-1"></i>WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================
+     Header / Navbar
+     =================================== -->
+<header class="main-header" data-testid="main-header">
+  <nav class="navbar navbar-expand-lg" aria-label="Ana Navigasyon">
+    <div class="container">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html" data-testid="logo-link" aria-label="MATIXO Ana Sayfa">
+        <span class="logo-text">MATI<span style="color:var(--turquoise)">X</span>O</span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler ms-auto me-2" type="button"
+        data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Menüyü Aç"
+        data-testid="navbar-toggle">
+        <i class="bi bi-list" style="font-size:1.4rem;color:var(--primary)"></i>
+      </button>
+
+      <!-- Search Toggle (mobile) -->
+      <div class="position-relative d-lg-none">
+        <button class="search-btn" id="searchToggleMobile" aria-label="Arama">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+
+      <!-- Nav Links -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html" aria-current="page" data-testid="nav-home">Ana Sayfa</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" data-testid="nav-categories">
+              Kategoriler
+            </a>
+            <ul class="dropdown-menu border-0 shadow-lg" style="border-radius:var(--radius-md);min-width:260px">
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-palette me-2 text-muted"></i>Proje Grafik & Tasarım</a></li>
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-tree me-2 text-muted"></i>Açık Hava Bilim Parkları</a></li>
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-puzzle me-2 text-muted"></i>Montessöri Materyalleri</a></li>
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-buildings me-2 text-muted"></i>Kent Ekipmanları</a></li>
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-sign-stop me-2 text-muted"></i>Müze Tabela / Totem</a></li>
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-calculator me-2 text-muted"></i>Açık Hava Matematik Parkları</a></li>
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-building me-2 text-muted"></i>Müze Binaları</a></li>
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-123 me-2 text-muted"></i>Matematik Müzeleri</a></li>
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-layout-text-window me-2 text-muted"></i>Maket Müzeler</a></li>
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-tools me-2 text-muted"></i>Matematik Atölyeleri</a></li>
+              <li><a class="dropdown-item py-2" href="category.html"><i class="bi bi-box me-2 text-muted"></i>Ahşap Dekoratif Ürünler</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" data-testid="nav-about">Hakkımızda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" data-testid="nav-contact">İletişim</a>
+          </li>
+        </ul>
+        <!-- Right Side -->
+        <div class="d-flex align-items-center gap-2">
+          <div class="position-relative d-none d-lg-block">
+            <button class="search-btn" id="searchToggle" aria-label="Arama Yap" data-testid="search-btn">
+              <i class="bi bi-search"></i>
+            </button>
+            <div class="search-form" id="searchPanel">
+              <form action="category.html" method="GET">
+                <input type="text" name="q" placeholder="Ürün veya kategori ara..." aria-label="Arama">
+                <button type="submit" class="btn btn-sm btn-primary-custom mt-2 w-100">
+                  <i class="bi bi-search me-2"></i>Ara
+                </button>
+              </form>
+            </div>
+          </div>
+          <a href="https://wa.me/905555555555" target="_blank" rel="noopener"
+            class="btn-primary-custom d-none d-lg-inline-flex"
+            data-testid="header-whatsapp-btn">
+            <i class="bi bi-whatsapp"></i> Teklif Al
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ===================================
+     Hero Carousel
+     =================================== -->
+<section class="hero-carousel" aria-label="Ana Slider" data-testid="hero-carousel">
+  <div id="heroCarousel" class="carousel carousel-fade slide h-100" data-bs-ride="carousel" data-bs-interval="5000">
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-label="Slayt 1" aria-current="true"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slayt 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slayt 3"></button>
+    </div>
+
+    <div class="carousel-inner h-100">
+
+      <!-- Slayt 1 -->
+      <div class="carousel-item active" style="background-image:url('https://images.unsplash.com/photo-1761403729405-18aa5d0610af?auto=format&fit=crop&w=1920&q=85')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7">
+                <span class="hero-badge hero-animate-1">Özel Üretim Projeler</span>
+                <h1 class="hero-animate-2">Eğitimin Mekanını<br><span style="color:var(--turquoise)">Tasarlıyoruz</span></h1>
+                <p class="hero-animate-3">Müze ekipmanlarından açık hava bilim parklarına, montessöri materyallerinden matematik atölyelerine kadar özel üretim çözümler sunuyoruz.</p>
+                <div class="d-flex flex-wrap gap-3 hero-animate-4">
+                  <a href="category.html" class="btn-primary-custom" data-testid="hero-cta-categories">
+                    <i class="bi bi-grid-3x3-gap-fill"></i> Kategorileri Keşfet
+                  </a>
+                  <a href="https://wa.me/905555555555?text=Merhaba%2C%20proje%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn-whatsapp" data-testid="hero-cta-whatsapp">
+                    <i class="bi bi-whatsapp"></i> Teklif Al
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slayt 2 -->
+      <div class="carousel-item" style="background-image:url('https://images.pexels.com/photos/31379970/pexels-photo-31379970.jpeg?auto=compress&cs=tinysrgb&w=1920&q=85')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7">
+                <span class="hero-badge" style="background:var(--orange)">Açık Hava Parkları</span>
+                <h1>Çocukların Keşfetmesine<br><span style="color:var(--orange)">İmkan Tanıyın</span></h1>
+                <p>Bilim ve matematik parkları ile öğrenmeyi oyuna dönüştürün. Her yaş grubuna uygun interaktif açık hava ekipmanları.</p>
+                <div class="d-flex flex-wrap gap-3">
+                  <a href="category.html" class="btn-primary-custom">
+                    <i class="bi bi-tree"></i> Bilim Parklarını İncele
+                  </a>
+                  <a href="about.html" class="btn-outline-custom" style="border-color:rgba(255,255,255,0.6);color:var(--white)">
+                    <i class="bi bi-info-circle"></i> Hakkımızda
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slayt 3 -->
+      <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1685358259043-a367462adf15?auto=format&fit=crop&w=1920&q=85')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7">
+                <span class="hero-badge" style="background:var(--green)">Montessöri & Ahşap</span>
+                <h1>Doğal Materyallerle<br><span style="color:var(--green)">Kalıcı Öğrenme</span></h1>
+                <p>El yapımı ahşap montessöri materyalleri ve dekoratif müze ürünleri. Doğal hammaddeden özel tasarım çözümler.</p>
+                <div class="d-flex flex-wrap gap-3">
+                  <a href="product.html" class="btn-primary-custom">
+                    <i class="bi bi-eye"></i> Ürünleri İncele
+                  </a>
+                  <a href="https://wa.me/905555555555?text=Montess%C3%B6ri%20materyalleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn-whatsapp">
+                    <i class="bi bi-whatsapp"></i> Sipariş Ver
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.carousel-inner -->
+
+    <!-- Prev/Next -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Önceki Slayt">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Sonraki Slayt">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</section>
+
+<!-- ===================================
+     Kategoriler
+     =================================== -->
+<section class="categories-section" id="kategoriler" data-testid="categories-section">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-badge">Ürün Yelpazesi</span>
+      <h2 class="section-title">Tüm <span style="color:var(--turquoise)">Kategoriler</span></h2>
+      <p class="section-subtitle mt-2">500'den fazla ürün ile eğitim ve müze projelerinize özel çözümler</p>
+    </div>
+
+    <!-- Bento Grid Satır 1 -->
+    <div class="row g-3 mb-3">
+      <div class="col-md-8 reveal delay-1">
+        <a href="category.html" class="category-card bento-lg d-block" data-testid="cat-bilim-parklari" aria-label="Açık Hava Bilim Parkları Kategorisi">
+          <img src="https://images.pexels.com/photos/31379970/pexels-photo-31379970.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="Açık Hava Bilim Parkları" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-tree"></i></div>
+            <h3 class="category-card-title">Açık Hava Bilim Parkları</h3>
+            <p class="category-card-count">45+ Ürün</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 reveal delay-2">
+        <a href="category.html" class="category-card bento-lg d-block" data-testid="cat-montessori" aria-label="Montessöri Materyalleri Kategorisi">
+          <img src="https://images.unsplash.com/photo-1774464593838-85b320eb7453?auto=format&fit=crop&w=600&q=80" alt="Montessöri Materyalleri" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-puzzle"></i></div>
+            <h3 class="category-card-title">Montessöri Materyalleri</h3>
+            <p class="category-card-count">80+ Ürün</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bento Grid Satır 2 -->
+    <div class="row g-3 mb-3">
+      <div class="col-md-4 reveal delay-1">
+        <a href="category.html" class="category-card bento-md d-block" data-testid="cat-grafik" aria-label="Proje Grafik Tasarım Kategorisi">
+          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Proje Grafik ve Tasarım" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-palette"></i></div>
+            <h3 class="category-card-title">Proje Grafik & Tasarım</h3>
+            <p class="category-card-count">30+ Proje</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 reveal delay-2">
+        <a href="category.html" class="category-card bento-md d-block" data-testid="cat-kent" aria-label="Kent Ekipmanları Kategorisi">
+          <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=600&q=80" alt="Kent Ekipmanları" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-buildings"></i></div>
+            <h3 class="category-card-title">Kent Ekipmanları</h3>
+            <p class="category-card-count">60+ Ürün</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 reveal delay-3">
+        <a href="category.html" class="category-card bento-md d-block" data-testid="cat-muzebina" aria-label="Müze Binaları Kategorisi">
+          <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=600&q=80" alt="Müze Binaları" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-building"></i></div>
+            <h3 class="category-card-title">Müze Binaları</h3>
+            <p class="category-card-count">15+ Proje</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bento Grid Satır 3 -->
+    <div class="row g-3 mb-3">
+      <div class="col-md-6 reveal delay-1">
+        <a href="category.html" class="category-card bento-sm d-block" data-testid="cat-tabela" aria-label="Müze Tabela Totem Kategorisi">
+          <img src="https://images.unsplash.com/photo-1572953109213-3be62398eb95?auto=format&fit=crop&w=700&q=80" alt="Müze Tabela ve Totem" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-sign-stop"></i></div>
+            <h3 class="category-card-title">Müze Tabela / Totem</h3>
+            <p class="category-card-count">40+ Ürün</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3 reveal delay-2">
+        <a href="category.html" class="category-card bento-sm d-block" data-testid="cat-matematik-park" aria-label="Açık Hava Matematik Parkları Kategorisi">
+          <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?auto=format&fit=crop&w=400&q=80" alt="Açık Hava Matematik Parkları" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-calculator"></i></div>
+            <h3 class="category-card-title">Açık Hava Matematik Parkları</h3>
+            <p class="category-card-count">35+ Ürün</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3 reveal delay-3">
+        <a href="category.html" class="category-card bento-sm d-block" data-testid="cat-matematik-muzesi" aria-label="Matematik Müzeleri Kategorisi">
+          <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=400&q=80" alt="Matematik Müzeleri" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-123"></i></div>
+            <h3 class="category-card-title">Matematik Müzeleri</h3>
+            <p class="category-card-count">25+ Ürün</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bento Grid Satır 4 -->
+    <div class="row g-3">
+      <div class="col-md-4 reveal delay-1">
+        <a href="category.html" class="category-card bento-sm d-block" data-testid="cat-maket" aria-label="Maket Müzeler Kategorisi">
+          <img src="https://images.unsplash.com/photo-1582126892906-5ba118eaf46e?auto=format&fit=crop&w=500&q=80" alt="Maket Müzeler" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-layout-text-window"></i></div>
+            <h3 class="category-card-title">Maket Müzeler</h3>
+            <p class="category-card-count">20+ Proje</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 reveal delay-2">
+        <a href="category.html" class="category-card bento-sm d-block" data-testid="cat-atolye" aria-label="Matematik Atölyeleri Kategorisi">
+          <img src="https://images.pexels.com/photos/8926832/pexels-photo-8926832.jpeg?auto=compress&cs=tinysrgb&w=500&q=80" alt="Matematik Atölyeleri" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-tools"></i></div>
+            <h3 class="category-card-title">Matematik Atölyeleri</h3>
+            <p class="category-card-count">30+ Ürün</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 reveal delay-3">
+        <a href="category.html" class="category-card bento-sm d-block" data-testid="cat-ahsap" aria-label="Ahşap Dekoratif Ürünler Kategorisi">
+          <img src="https://images.unsplash.com/photo-1685358268305-c621b38e75d8?auto=format&fit=crop&w=500&q=80" alt="Müze İçi Ahşap Dekoratif Ürünler" loading="lazy">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-body">
+            <div class="category-card-icon"><i class="bi bi-box"></i></div>
+            <h3 class="category-card-title">Ahşap Dekoratif Ürünler</h3>
+            <p class="category-card-count">70+ Ürün</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================
+     Öne Çıkan Ürünler
+     =================================== -->
+<section class="py-7" style="background:var(--white)" id="urunler" data-testid="featured-products">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3">
+      <div class="reveal">
+        <span class="section-badge">Seçtiklerimiz</span>
+        <h2 class="section-title">Öne Çıkan <span style="color:var(--turquoise)">Ürünler</span></h2>
+      </div>
+      <a href="category.html" class="btn-outline-custom reveal" data-testid="view-all-products-btn">
+        <i class="bi bi-arrow-right"></i> Tümünü Gör
+      </a>
+    </div>
+
+    <div class="row g-4">
+      <!-- Ürün 1 -->
+      <div class="col-sm-6 col-lg-3 reveal delay-1">
+        <article class="product-card h-100" data-testid="product-card-1">
+          <div class="product-card-img-wrap">
+            <img src="https://images.pexels.com/photos/31379970/pexels-photo-31379970.jpeg?auto=compress&cs=tinysrgb&w=500&q=80" alt="Güneş Sistemi Parkı" loading="lazy">
+            <span class="product-badge badge-new">Yeni</span>
+          </div>
+          <div class="product-card-body">
+            <span class="product-category-tag">Bilim Parkı</span>
+            <h3 class="product-card-title">Güneş Sistemi Parkı</h3>
+            <p class="product-card-desc">Gezegenlerin boyut ve uzaklık oranlarını öğreten interaktif açık hava parkı ekipmanı.</p>
+          </div>
+          <div class="product-card-footer">
+            <a href="https://wa.me/905555555555?text=G%C3%BCne%C5%9F%20Sistemi%20Park%C4%B1%20%C3%BCr%C3%BCn%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+              class="whatsapp-link" target="_blank" rel="noopener" data-testid="whatsapp-link-1">
+              <i class="bi bi-whatsapp"></i> Sipariş Ver
+            </a>
+            <a href="product.html" class="detail-link" data-testid="detail-link-1">
+              <i class="bi bi-eye"></i> İncele
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Ürün 2 -->
+      <div class="col-sm-6 col-lg-3 reveal delay-2">
+        <article class="product-card h-100" data-testid="product-card-2">
+          <div class="product-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1774464593838-85b320eb7453?auto=format&fit=crop&w=500&q=80" alt="Montessöri Şekil Sıralama Seti" loading="lazy">
+            <span class="product-badge badge-popular">Popüler</span>
+          </div>
+          <div class="product-card-body">
+            <span class="product-category-tag">Montessöri</span>
+            <h3 class="product-card-title">Montessöri Şekil Sıralama Seti</h3>
+            <p class="product-card-desc">Renkli geometrik şekiller ile erken yaş döneminde şekil ve renk öğretimi sağlayan ahşap set.</p>
+          </div>
+          <div class="product-card-footer">
+            <a href="https://wa.me/905555555555?text=Montess%C3%B6ri%20%C5%9Fekil%20s%C4%B1ralama%20seti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+              class="whatsapp-link" target="_blank" rel="noopener" data-testid="whatsapp-link-2">
+              <i class="bi bi-whatsapp"></i> Sipariş Ver
+            </a>
+            <a href="product.html" class="detail-link" data-testid="detail-link-2">
+              <i class="bi bi-eye"></i> İncele
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Ürün 3 -->
+      <div class="col-sm-6 col-lg-3 reveal delay-3">
+        <article class="product-card h-100" data-testid="product-card-3">
+          <div class="product-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1761403729405-18aa5d0610af?auto=format&fit=crop&w=500&q=80" alt="Müze İç Mekan Totem" loading="lazy">
+            <span class="product-badge badge-campaign">Kampanya</span>
+          </div>
+          <div class="product-card-body">
+            <span class="product-category-tag">Tabela / Totem</span>
+            <h3 class="product-card-title">Müze İç Mekan Totem</h3>
+            <p class="product-card-desc">Müze ziyaretçilerini yönlendiren, kurumsal kimlikle uyumlu özel tasarım iç mekan totemi.</p>
+          </div>
+          <div class="product-card-footer">
+            <a href="https://wa.me/905555555555?text=M%C3%BCze%20%C4%B0%C3%A7%20Mekan%20Totem%20%C3%BCr%C3%BCn%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+              class="whatsapp-link" target="_blank" rel="noopener" data-testid="whatsapp-link-3">
+              <i class="bi bi-whatsapp"></i> Sipariş Ver
+            </a>
+            <a href="product.html" class="detail-link" data-testid="detail-link-3">
+              <i class="bi bi-eye"></i> İncele
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Ürün 4 -->
+      <div class="col-sm-6 col-lg-3 reveal delay-4">
+        <article class="product-card h-100" data-testid="product-card-4">
+          <div class="product-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1685358259043-a367462adf15?auto=format&fit=crop&w=500&q=80" alt="Ahşap Matematik Manipülatif Seti" loading="lazy">
+            <span class="product-badge badge-new">Yeni</span>
+          </div>
+          <div class="product-card-body">
+            <span class="product-category-tag">Matematik Atölyesi</span>
+            <h3 class="product-card-title">Ahşap Matematik Manipülatif Seti</h3>
+            <p class="product-card-desc">Sayılar, işlemler ve geometriyi somutlaştıran özel üretim ahşap atölye materyal seti.</p>
+          </div>
+          <div class="product-card-footer">
+            <a href="https://wa.me/905555555555?text=Ahşap%20Matematik%20Manipülatif%20Seti%20hakkında%20bilgi%20almak%20istiyorum."
+              class="whatsapp-link" target="_blank" rel="noopener" data-testid="whatsapp-link-4">
+              <i class="bi bi-whatsapp"></i> Sipariş Ver
+            </a>
+            <a href="product.html" class="detail-link" data-testid="detail-link-4">
+              <i class="bi bi-eye"></i> İncele
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================
+     Kampanya Bölümü
+     =================================== -->
+<section class="campaign-section" id="kampanya" data-testid="campaign-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal-left">
+        <span class="campaign-badge"><i class="bi bi-lightning-fill me-1"></i>Özel Teklif</span>
+        <h2>Okul ve Belediye <br>Projelerine <span style="color:var(--orange)">Özel Fiyat</span></h2>
+        <p>Okullar, belediyeler ve kamu kurumları için toplu sipariş avantajı. 10 parça ve üzeri siparişlerde özel proje fiyatı için bizimle iletişime geçin.</p>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li class="d-flex gap-2 mb-2" style="color:rgba(255,255,255,0.85);font-size:0.95rem">
+            <i class="bi bi-check-circle-fill text-success mt-1"></i> Kurumsal fatura düzenlenir
+          </li>
+          <li class="d-flex gap-2 mb-2" style="color:rgba(255,255,255,0.85);font-size:0.95rem">
+            <i class="bi bi-check-circle-fill text-success mt-1"></i> Proje bazlı üretim yapılır
+          </li>
+          <li class="d-flex gap-2 mb-2" style="color:rgba(255,255,255,0.85);font-size:0.95rem">
+            <i class="bi bi-check-circle-fill text-success mt-1"></i> Teslim garantisi verilir
+          </li>
+          <li class="d-flex gap-2" style="color:rgba(255,255,255,0.85);font-size:0.95rem">
+            <i class="bi bi-check-circle-fill text-success mt-1"></i> Montaj ve kurulum desteği
+          </li>
+        </ul>
+        <a href="https://wa.me/905555555555?text=Toplu%20sipariş%20ve%20proje%20fiyatı%20hakkında%20bilgi%20almak%20istiyorum."
+          class="btn-whatsapp d-inline-flex" target="_blank" rel="noopener" data-testid="campaign-whatsapp-btn">
+          <i class="bi bi-whatsapp"></i> Kampanya Teklifi Al
+        </a>
+      </div>
+      <div class="col-lg-6 reveal-right">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.3)">
+          <img src="https://images.pexels.com/photos/8926832/pexels-photo-8926832.jpeg?auto=compress&cs=tinysrgb&w=700&q=80"
+            alt="Öğrenciler bilim deneyi yapıyor" loading="lazy"
+            style="width:100%;height:380px;object-fit:cover;display:block">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================
+     Neden Biz
+     =================================== -->
+<section class="why-us-section" id="neden-biz" data-testid="why-us-section">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-badge">Fark Yaratıyoruz</span>
+      <h2 class="section-title">Neden <span style="color:var(--turquoise)">MATIXO</span>?</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3 reveal delay-1">
+        <div class="why-card">
+          <div class="why-icon why-icon-1"><i class="bi bi-award"></i></div>
+          <h4>Uzman Üretim</h4>
+          <p>Yılların deneyimiyle eğitim ve müze sektörüne özel üretim altyapısı</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal delay-2">
+        <div class="why-card">
+          <div class="why-icon why-icon-2"><i class="bi bi-rulers"></i></div>
+          <h4>Ölçüye Göre Üretim</h4>
+          <p>Her ürün sizin ihtiyaç ve mekanınıza uygun olarak özel ölçülerde üretilir</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal delay-3">
+        <div class="why-card">
+          <div class="why-icon why-icon-3"><i class="bi bi-shield-check"></i></div>
+          <h4>Kalite Güvencesi</h4>
+          <p>CE sertifikalı malzemeler ve uluslararası güvenlik standartlarına uygunluk</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal delay-4">
+        <div class="why-card">
+          <div class="why-icon why-icon-4"><i class="bi bi-truck"></i></div>
+          <h4>Anahtar Teslim</h4>
+          <p>Tasarımdan montaja, projenizi baştan sona teslim alıyoruz</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================
+     İstatistikler
+     =================================== -->
+<section class="stats-section" data-testid="stats-section">
+  <div class="container">
+    <div class="row g-4 text-center align-items-center">
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal delay-1">
+          <span class="stat-number" data-count="500" data-suffix="+">0+</span>
+          <span class="stat-label">Tamamlanan Proje</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal delay-2">
+          <span class="stat-number" data-count="50" data-suffix="+">0+</span>
+          <span class="stat-label">Hizmet Verilen İl</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal delay-3">
+          <span class="stat-number" data-count="200" data-suffix="+">0+</span>
+          <span class="stat-label">Kurumsal Müşteri</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal delay-4">
+          <span class="stat-number" data-count="15" data-suffix=" Yıl">0 Yıl</span>
+          <span class="stat-label">Sektör Deneyimi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================
+     Referanslar
+     =================================== -->
+<section class="references-section" data-testid="references-section">
+  <div class="container">
+    <div class="text-center mb-4 reveal">
+      <p class="section-subtitle fw-600" style="font-weight:600;color:var(--text-muted)">Güvenilir Kurumların Tercihi</p>
+    </div>
+    <div class="row g-4 align-items-center justify-content-center text-center">
+      <div class="col-4 col-md-2">
+        <div class="d-flex align-items-center justify-content-center h-100 py-2">
+          <span style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.1rem;color:var(--primary);opacity:0.5">MEB</span>
+        </div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="d-flex align-items-center justify-content-center py-2">
+          <span style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;color:var(--primary);opacity:0.5">BELEDİYE</span>
+        </div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="d-flex align-items-center justify-content-center py-2">
+          <span style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;color:var(--primary);opacity:0.5">ÜNİVERSİTE</span>
+        </div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="d-flex align-items-center justify-content-center py-2">
+          <span style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;color:var(--primary);opacity:0.5">MÜZE</span>
+        </div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="d-flex align-items-center justify-content-center py-2">
+          <span style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;color:var(--primary);opacity:0.5">ANAOKULU</span>
+        </div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div class="d-flex align-items-center justify-content-center py-2">
+          <span style="font-family:'Outfit',sans-serif;font-weight:700;font-size:0.9rem;color:var(--primary);opacity:0.5">MİMARLIK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================
+     Footer
+     =================================== -->
+<footer class="main-footer" data-testid="main-footer">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Marka -->
+      <div class="col-lg-4">
+        <span class="footer-brand"><span class="logo-text">MATI<span style="color:var(--turquoise)">X</span>O</span></span>
+        <p class="footer-desc">Eğitim mekanlarını tasarlayan, bilim ve matematik parkları üreten, müze ekipmanları ve montessöri materyalleri geliştiren öncü bir üretim firması.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="https://wa.me/905555555555" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Kategoriler -->
+      <div class="col-sm-6 col-lg-2">
+        <h4 class="footer-heading">Kategoriler</h4>
+        <ul class="footer-links">
+          <li><a href="category.html"><i class="bi bi-chevron-right"></i>Bilim Parkları</a></li>
+          <li><a href="category.html"><i class="bi bi-chevron-right"></i>Montessöri</a></li>
+          <li><a href="category.html"><i class="bi bi-chevron-right"></i>Kent Ekipmanları</a></li>
+          <li><a href="category.html"><i class="bi bi-chevron-right"></i>Müze Tabela</a></li>
+          <li><a href="category.html"><i class="bi bi-chevron-right"></i>Mat. Parkları</a></li>
+          <li><a href="category.html"><i class="bi bi-chevron-right"></i>Ahşap Ürünler</a></li>
+        </ul>
+      </div>
+
+      <!-- Kurumsal -->
+      <div class="col-sm-6 col-lg-2">
+        <h4 class="footer-heading">Kurumsal</h4>
+        <ul class="footer-links">
+          <li><a href="about.html"><i class="bi bi-chevron-right"></i>Hakkımızda</a></li>
+          <li><a href="contact.html"><i class="bi bi-chevron-right"></i>İletişim</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right"></i>KVKK</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right"></i>Gizlilik Politikası</a></li>
+          <li><a href="#"><i class="bi bi-chevron-right"></i>Kullanım Şartları</a></li>
+        </ul>
+      </div>
+
+      <!-- İletişim -->
+      <div class="col-lg-4">
+        <h4 class="footer-heading">İletişim</h4>
+        <div class="footer-contact-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>Örnek Mahalle, Örnek Sokak No:1<br>İstanbul, Türkiye</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-telephone-fill"></i>
+          <span>+90 555 555 55 55</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-envelope-fill"></i>
+          <span>info@matixo.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="bi bi-clock-fill"></i>
+          <span>Pzt – Cum: 09:00 – 18:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <p>&copy; 2025 MATIXO. Tüm hakları saklıdır.</p>
+        <div class="d-flex gap-3">
+          <a href="#">KVKK</a>
+          <a href="#">Gizlilik</a>
+          <a href="#">Çerezler</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================================
+     Kampanya / Duyuru Modalı
+     =================================== -->
+<div class="matixo-modal-backdrop" id="campaignModal" role="dialog" aria-modal="true" aria-labelledby="campaignModalTitle" data-testid="campaign-modal">
+  <div class="matixo-modal">
+    <button type="button" class="matixo-modal-close" data-modal-close aria-label="Kapat" data-testid="campaign-modal-close-btn">
+      <i class="bi bi-x-lg"></i>
+    </button>
+
+    <!-- Sol: Görsel + Slogan -->
+    <div class="matixo-modal-visual">
+      <img src="https://images.pexels.com/photos/8926832/pexels-photo-8926832.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Kampanya görseli" loading="lazy">
+      <div class="matixo-modal-visual-content">
+        <span class="matixo-modal-tag">
+          <i class="bi bi-stars"></i> Sezon Kampanyası
+        </span>
+        <h3 id="campaignModalTitle">
+          Yeni Eğitim Yılına <span class="accent">Özel Avantajlar</span>
+        </h3>
+        <div class="matixo-modal-visual-foot">
+          <i class="bi bi-calendar-event"></i>
+          <span>Geçerlilik: 31 Mart 2026'ya kadar</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sağ: İçerik + CTA -->
+    <div class="matixo-modal-body">
+      <h4>Okul ve Belediyelere Özel Paket</h4>
+      <p class="lead">
+        Açık hava bilim parkları, matematik atölyeleri ve montessöri materyallerinde sezon başına özel avantajlardan yararlanın. Anahtar teslim kurulum bizden.
+      </p>
+
+      <ul class="matixo-modal-perks" data-testid="campaign-modal-perks">
+        <li><i class="bi bi-check-lg"></i><span><strong>Ücretsiz keşif</strong> ve 3D yerleşim planı</span></li>
+        <li><i class="bi bi-check-lg"></i><span>Toplu projelerde <strong>özel iskonto</strong></span></li>
+        <li><i class="bi bi-check-lg"></i><span><strong>2 yıl yapısal garanti</strong> + kurulum dahil</span></li>
+      </ul>
+
+      <div class="matixo-modal-cta">
+        <a href="https://wa.me/905555555555?text=Merhaba%2C%20sezon%20kampanyan%C4%B1z%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+          class="btn-whatsapp" target="_blank" rel="noopener" data-modal-close
+          data-testid="campaign-modal-whatsapp-btn">
+          <i class="bi bi-whatsapp"></i> WhatsApp'tan Teklif Al
+        </a>
+        <a href="category.html" class="btn-outline-custom" data-modal-close data-testid="campaign-modal-explore-btn">
+          <i class="bi bi-grid"></i> Ürünleri İncele
+        </a>
+      </div>
+
+      <div class="matixo-modal-foot">
+        <label>
+          <input type="checkbox" id="campaignDontShow" data-testid="campaign-modal-hide-check">
+          Bir daha gösterme
+        </label>
+        <a href="#" data-modal-close data-testid="campaign-modal-dismiss-link">Şimdi değil, teşekkürler</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================
+     Çerez Bildirimi
+     =================================== -->
+<div class="cookie-consent" id="cookieConsent" role="dialog" aria-label="Çerez Bildirimi" data-testid="cookie-consent">
+  <div class="cookie-icon">🍪</div>
+  <div class="cookie-text">
+    <p>
+      <strong>Çerez Politikamız:</strong> Size daha iyi bir deneyim sunmak için çerezler kullanıyoruz.
+      <a href="#">Gizlilik politikamızı</a> okuyarak daha fazla bilgi edinebilirsiniz.
+    </p>
+  </div>
+  <div class="cookie-actions">
+    <button class="btn-primary-custom" id="cookieAccept" data-testid="cookie-accept-btn" style="padding:0.5rem 1.25rem;font-size:0.88rem">
+      <i class="bi bi-check-lg"></i> Kabul Et
+    </button>
+    <button class="btn-outline-custom" id="cookieReject" data-testid="cookie-reject-btn" style="padding:0.5rem 1.25rem;font-size:0.88rem">
+      Reddet
+    </button>
+  </div>
+</div>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/905555555555?text=Merhaba%2C%20MATIXO%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum."
+  class="whatsapp-float" target="_blank" rel="noopener"
+  aria-label="WhatsApp ile İletişim" data-testid="whatsapp-float-btn"
+  data-bs-toggle="tooltip" data-bs-placement="left" title="WhatsApp ile Ulaşın">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- Yukarı Çık -->
+<button class="back-to-top" id="backToTop" aria-label="Sayfanın Başına Dön" data-testid="back-to-top-btn">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+</body>
+</html>
