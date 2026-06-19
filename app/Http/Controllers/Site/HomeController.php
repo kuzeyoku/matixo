@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         $sliders = Slider::running()->ordered()->get();
         $categories = Category::active()->roots()->onHome()->withCount(['products' => fn($q) => $q->active()])->ordered()->get();
-        $featured = Product::active()->featured()->with('category', 'images')->ordered()->take(8)->get();
+        $featured = Product::active()->featured()->with('category', 'images')->ordered()->take((int) setting('home_featured_count', 8))->get();
         $references = Reference::active()->ordered()->get();
         $campaign = Campaign::active()->section()->first();
         $reviews = Review::approved()->with('product')->latest('reviewed_at')->take(6)->get();
