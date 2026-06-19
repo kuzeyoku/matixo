@@ -210,5 +210,6 @@ return [
     'subject_math_workshop'  => 'Matematik Atölyesi',
     'subject_wood_decor'     => 'Ahşap Dekoratif Ürünler',
     'subject_other'          => 'Diğer',
+    'price'                  => 'Fiyat',
 
 ];

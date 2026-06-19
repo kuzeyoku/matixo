@@ -137,8 +137,16 @@
             @endif
           </div>
 
-          <h1 class="product-detail-title" data-testid="product-title">
+          <h1 class="product-detail-title" data-testid="product-title" style="margin-bottom:0.5rem;">
             {{ gt($product, 'title') }}</h1>
+
+          @if($product->price)
+            <div class="product-detail-price mb-3" style="font-family: 'Outfit', sans-serif;">
+              <span class="price-amount" style="font-size: 2rem; font-weight: 800; color: var(--turquoise);">
+                {{ app()->getLocale() === 'tr' ? '₺' . number_format($product->price, 2, ',', '.') : '₺' . number_format($product->price, 2, '.', ',') }}
+              </span>
+            </div>
+          @endif
 
           <div class="product-meta">
             @if($product->code)
@@ -583,6 +591,11 @@
                     <span
                       class="product-category-tag">{{ gt($relProduct->category, 'name') }}</span>
                     <h3 class="product-card-title">{{ gt($relProduct, 'title') }}</h3>
+                    @if($relProduct->price)
+                      <div class="product-card-price mb-2" style="font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--turquoise); font-size: 1.15rem;">
+                        {{ app()->getLocale() === 'tr' ? '₺' . number_format($relProduct->price, 2, ',', '.') : '₺' . number_format($relProduct->price, 2, '.', ',') }}
+                      </div>
+                    @endif
                   </div>
                   <div class="product-card-footer mt-auto">
                     <a href="https://wa.me/{{ setting('contact_whatsapp') }}?text={{ urlencode(gt($relProduct, 'title') . ' ' . __('site.order_btn')) }}"

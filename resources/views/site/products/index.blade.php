@@ -136,6 +136,11 @@
                                             <span class="product-category-tag">{{ gt($product->category, 'name') }}</span>
                                         @endif
                                         <h3 class="product-card-title">{{ gt($product, 'title') }}</h3>
+                                        @if($product->price)
+                                            <div class="product-card-price mb-2" style="font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--turquoise); font-size: 1.15rem;">
+                                                {{ app()->getLocale() === 'tr' ? '₺' . number_format($product->price, 2, ',', '.') : '₺' . number_format($product->price, 2, '.', ',') }}
+                                            </div>
+                                        @endif
                                         <p class="product-card-desc">{{ Str::limit(gt($product, 'short_description'), 100) }}</p>
                                     </div>
                                     <div class="product-card-footer">

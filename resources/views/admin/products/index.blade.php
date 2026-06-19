@@ -30,6 +30,7 @@
           <th>Ürün</th>
           <th>Kategori</th>
           <th width="90">Kod</th>
+          <th width="100">Fiyat</th>
           <th width="80">Öne Çıkan</th>
           <th width="80">Durum</th>
           <th width="120" class="text-end">İşlemler</th>
@@ -54,6 +55,7 @@
             </td>
             <td class="small text-muted">{{ $p->category?->getTranslation('name', default_locale()) }}</td>
             <td class="small"><code>{{ $p->code ?: '—' }}</code></td>
+            <td class="small fw-semibold">{{ $p->price ? '₺' . number_format($p->price, 2, ',', '.') : '—' }}</td>
             <td>{!! $p->is_featured ? '<i class="bi bi-star-fill text-warning"></i>' : '<i class="bi bi-star text-muted"></i>' !!}</td>
             <td>
               <form method="POST" action="{{ route('admin.products.toggle', $p->id) }}" class="d-inline">
@@ -72,7 +74,7 @@
             </td>
           </tr>
         @empty
-          <tr><td colspan="7" class="text-center text-muted py-4">Henüz ürün yok.</td></tr>
+          <tr><td colspan="8" class="text-center text-muted py-4">Henüz ürün yok.</td></tr>
         @endforelse
       </tbody>
     </table>

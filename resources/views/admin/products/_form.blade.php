@@ -56,6 +56,9 @@
                 @endforeach
               </select>
             </div>
+            <div class="mb-3"><label class="form-label small">Fiyat (TRY)</label>
+              <input type="number" step="0.01" min="0" name="price" value="{{ old('price', isset($item) && $item->price ? number_format($item->price, 2, '.', '') : '') }}" class="form-control" placeholder="0.00">
+            </div>
             <div class="mb-3"><label class="form-label small">Etiket</label>
               <select name="badge" class="form-select">
                 @foreach($badgeOptions as $k => $v)<option value="{{ $k }}" @selected(old('badge', $item->badge ?? '') === $k)>{{ $v }}</option>@endforeach

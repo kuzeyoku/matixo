@@ -23,6 +23,7 @@ class ProductRequest extends BaseAdminRequest
                 'certification'    => ['nullable', 'string', 'max:191'],
                 'production_time'  => ['nullable', 'string', 'max:50'],
                 'warranty'         => ['nullable', 'string', 'max:50'],
+                'price'            => ['nullable', 'numeric', 'min:0'],
                 'badge'            => ['nullable', 'in:new,campaign,popular'],
                 'is_active'        => ['nullable', 'boolean'],
                 'is_featured'      => ['nullable', 'boolean'],

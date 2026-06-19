@@ -13,7 +13,7 @@ class Product extends BaseModel
     protected $fillable = [
         'category_id', 'title', 'slug', 'code', 'short_description', 'description',
         'material', 'age_range', 'certification', 'production_time', 'warranty',
-        'cover_image', 'is_active', 'is_featured', 'badge', 'sort_order',
+        'price', 'cover_image', 'is_active', 'is_featured', 'badge', 'sort_order',
         'meta_title', 'meta_description', 'og_image',
     ];
 
@@ -22,6 +22,7 @@ class Product extends BaseModel
     ];
 
     protected $casts = [
+        'price'       => 'decimal:2',
         'is_active'   => 'boolean',
         'is_featured' => 'boolean',
         'sort_order'  => 'integer',

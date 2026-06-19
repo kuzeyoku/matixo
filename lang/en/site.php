@@ -210,5 +210,6 @@ return [
     'subject_math_workshop'  => 'Mathematics Workshop',
     'subject_wood_decor'     => 'Wooden Decorative Products',
     'subject_other'          => 'Other',
+    'price'                  => 'Price',
 
 ];
