@@ -1,5 +1,15 @@
 @extends('admin.layouts.master')
 @section('title', 'Aktivite Logları')
+
+@section('page-actions')
+  <form action="{{ route('admin.activity.clear') }}" method="POST" class="d-inline">
+    @csrf
+    <button type="submit" class="btn btn-danger btn-sm" data-confirm="Tüm aktivite logları kalıcı olarak silinecektir. Bu işlemi yapmak istediğinizden emin misiniz?">
+      <i class="bi bi-trash"></i> Tüm Logları Temizle
+    </button>
+  </form>
+@endsection
+
 @section('content')
 <x-list-card :items="$items" :show-active-filter="false" search-placeholder="Açıklama ara...">
   <div class="table-responsive">

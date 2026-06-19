@@ -20,4 +20,10 @@ class ActivityLogController extends Controller
 
         return view('admin.activity.index', ['items' => $items, 'filters' => $r->all()]);
     }
+
+    public function clear()
+    {
+        ActivityLog::truncate();
+        return redirect()->route('admin.activity.index')->with('success', 'Tüm aktivite logları başarıyla temizlendi.');
+    }
 }

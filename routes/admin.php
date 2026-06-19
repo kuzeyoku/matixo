@@ -73,4 +73,5 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('languages', LanguageController::class)->except(['show']);
 
     Route::get('activity', [ActivityLogController::class, 'index'])->name('activity.index');
+    Route::post('activity/clear', [ActivityLogController::class, 'clear'])->name('activity.clear');
 });
