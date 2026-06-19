@@ -71,7 +71,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .auth-brand { margin-bottom: 2rem; }
 .auth-side {
-  background: linear-gradient(135deg, var(--mx-primary) 0%, var(--mx-primary-dark) 100%);
+  background: linear-gradient(135deg, rgba(32, 80, 107, 0.92) 0%, rgba(22, 56, 75, 0.96) 100%), url('../images/login-bg.png');
+  background-size: cover;
+  background-position: center;
   color: white;
   padding: 3rem;
   position: relative;
