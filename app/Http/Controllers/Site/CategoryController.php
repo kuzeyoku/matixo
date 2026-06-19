@@ -29,7 +29,7 @@ class CategoryController extends Controller
     {
         $category = Category::active()
             ->where('slug', $slug)
-            ->with(['children' => fn($q) => $q->active()->withCount(['products' => fn($pq) => $pq->pqCountActive ?? $pq->active()])->ordered()])
+            ->with(['children' => fn($q) => $q->active()->withCount(['products' => fn($pq) => $pq->active()])->ordered()])
             ->firstOrFail();
 
         $products = $category->products()
