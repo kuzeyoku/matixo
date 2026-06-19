@@ -28,7 +28,9 @@
     document.addEventListener('DOMContentLoaded', function () {
       // Dropify init
       if (window.jQuery && jQuery('.dropify').length) {
-        jQuery('.dropify').dropify();
+        jQuery('.dropify').dropify({
+          imgFileExtensions: ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp']
+        });
       }
       // Quill init (MATIXO.initQuill helper'ı admin.js'de)
       if (window.MATIXO && window.MATIXO.initQuill) {
