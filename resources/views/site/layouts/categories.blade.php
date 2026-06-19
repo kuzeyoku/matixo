@@ -8,7 +8,7 @@
         <div class="row g-3 mb-3">
             @foreach($categories as $c)
                 <div class="@if($loop->first) col-md-8 @else col-md-4 @endif reveal delay-{{ $loop->iteration }}">
-                    <a href="{{route("categories.show", $c->slug)}}" class="category-card bento-lg d-block"
+                    <a href="{{route("categories.show", $c->slug)}}" class="category-card bento-{{ $c->bento_size ?? 'lg' }} d-block"
                         data-testid="cat-bilim-parklari" aria-label="{{ gt($c, 'name') }}">
                         <img src="{{ asset("storage/" . $c->image) }}"
                             alt="{{ gt($c, 'name') }}" loading="lazy">
