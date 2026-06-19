@@ -151,25 +151,45 @@ return [
         ],
     ],
 
-    'attributes' => [
-        'name' => 'Ad',
-        'title' => 'Başlık',
-        'description' => 'Açıklama',
-        'short_description' => 'Kısa Açıklama',
-        'content' => 'İçerik',
-        'email' => 'E-posta Adresi',
-        'password' => 'Parola',
-        'category_id' => 'Kategori',
-        'icon' => 'İkon',
-        'image' => 'Görsel',
-        'cover_image' => 'Kapak Görseli',
-        'bento_size' => 'Bento Boyutu',
-        'sort_order' => 'Sıralama',
-        'code' => 'Ürün Kodu',
-        'material' => 'Malzeme',
-        'age_range' => 'Yaş Aralığı',
-        'certification' => 'Sertifika',
-        'production_time' => 'Üretim Süresi',
-        'warranty' => 'Garanti',
-    ],
+    'attributes' => (function() {
+        $attributes = [
+            'name' => 'Ad',
+            'title' => 'Başlık',
+            'description' => 'Açıklama',
+            'short_description' => 'Kısa Açıklama',
+            'content' => 'İçerik',
+            'email' => 'E-posta Adresi',
+            'password' => 'Parola',
+            'category_id' => 'Kategori',
+            'icon' => 'İkon',
+            'image' => 'Görsel',
+            'cover_image' => 'Kapak Görseli',
+            'bento_size' => 'Bento Boyutu',
+            'sort_order' => 'Sıralama',
+            'code' => 'Ürün Kodu',
+            'material' => 'Malzeme',
+            'age_range' => 'Yaş Aralığı',
+            'certification' => 'Sertifika',
+            'production_time' => 'Üretim Süresi',
+            'warranty' => 'Garanti',
+            'meta_title' => 'Meta Başlık',
+            'meta_description' => 'Meta Açıklama',
+        ];
+
+        try {
+            if (function_exists('active_languages') && class_exists(\Illuminate\Support\Facades\Schema::class) && \Illuminate\Support\Facades\Schema::hasTable('languages')) {
+                $translatableFields = ['name', 'title', 'description', 'short_description', 'content', 'meta_title', 'meta_description'];
+                foreach (active_languages() as $lang) {
+                    $langSuffix = strtoupper($lang->code);
+                    foreach ($translatableFields as $field) {
+                        if (isset($attributes[$field])) {
+                            $attributes["{$field}.{$lang->code}"] = $attributes[$field] . " ({$langSuffix})";
+                        }
+                    }
+                }
+            }
+        } catch (\Throwable $e) {}
+
+        return $attributes;
+    })(),
 ];
