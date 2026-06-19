@@ -9,8 +9,8 @@ class PageRequest extends BaseAdminRequest
         return array_merge(
             $this->translatableRule('title'),
             $this->translatableTextarea('content', 100000),
-            $this->translatableRule('meta_title'),
-            $this->translatableTextarea('meta_description', 500),
+            $this->translatableNullableRule('meta_title'),
+            $this->translatableNullableRule('meta_description', ['string', 'max:500']),
             [
                 'cover_image'    => $this->imageRule(),
                 'is_active'      => ['nullable', 'boolean'],

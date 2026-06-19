@@ -9,8 +9,8 @@ class CategoryRequest extends BaseAdminRequest
         return array_merge(
             $this->translatableRule('name'),
             $this->translatableTextarea('description'),
-            $this->translatableRule('meta_title'),
-            $this->translatableTextarea('meta_description', 500),
+            $this->translatableNullableRule('meta_title'),
+            $this->translatableNullableRule('meta_description', ['string', 'max:500']),
             [
                 'parent_id'    => ['nullable', 'integer', 'exists:categories,id'],
                 'icon'         => ['nullable', 'string', 'max:50'],

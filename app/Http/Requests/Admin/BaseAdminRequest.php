@@ -26,6 +26,18 @@ abstract class BaseAdminRequest extends FormRequest
         return $rules;
     }
 
+    /**
+     * Tamamen isteğe bağlı (nullable) çevirilebilir alanlar için validation kuralı üretir.
+     */
+    protected function translatableNullableRule(string $field, array $extra = ['string', 'max:255']): array
+    {
+        $rules = [];
+        foreach (active_languages() as $lang) {
+            $rules["{$field}.{$lang->code}"] = array_merge(['nullable'], $extra);
+        }
+        return $rules;
+    }
+
     protected function translatableTextarea(string $field, int $max = 10000): array
     {
         return $this->translatableRule($field, ['string', "max:{$max}", 'nullable']);

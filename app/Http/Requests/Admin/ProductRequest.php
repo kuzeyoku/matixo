@@ -13,8 +13,8 @@ class ProductRequest extends BaseAdminRequest
             $this->translatableRule('title'),
             $this->translatableTextarea('short_description', 1000),
             $this->translatableTextarea('description', 50000),
-            $this->translatableRule('meta_title'),
-            $this->translatableTextarea('meta_description', 500),
+            $this->translatableNullableRule('meta_title'),
+            $this->translatableNullableRule('meta_description', ['string', 'max:500']),
             [
                 'category_id'      => ['required', 'integer', 'exists:categories,id'],
                 'code'             => ['nullable', 'string', 'max:50', Rule::unique('products', 'code')->ignore($productId)->whereNull('deleted_at')],
