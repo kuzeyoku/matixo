@@ -56,14 +56,6 @@
           <div class="form-text small">Örn: <code>bi-tree</code>, <code>bi-puzzle</code>. <a href="https://icons.getbootstrap.com" target="_blank">Tüm ikonlar</a></div>
         </div>
 
-        <div class="mb-3">
-          <label class="form-label small fw-semibold">Bento Boyut (Anasayfa)</label>
-          <select name="bento_size" class="form-select">
-            @foreach(['lg' => 'Büyük', 'md' => 'Orta', 'sm' => 'Küçük'] as $k => $v)
-              <option value="{{ $k }}" @selected(old('bento_size', $item->bento_size ?? 'md') === $k)>{{ $v }}</option>
-            @endforeach
-          </select>
-        </div>
 
         <div class="mb-3">
           <label class="form-label small fw-semibold">Sıralama</label>

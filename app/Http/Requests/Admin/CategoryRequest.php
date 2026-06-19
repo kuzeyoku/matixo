@@ -15,7 +15,7 @@ class CategoryRequest extends BaseAdminRequest
                 'parent_id'    => ['nullable', 'integer', 'exists:categories,id'],
                 'icon'         => ['nullable', 'string', 'max:50'],
                 'image'        => $this->imageRule(),
-                'bento_size'   => ['required', 'in:lg,md,sm'],
+                'bento_size'   => ['nullable', 'in:lg,md,sm'],
                 'is_active'    => ['nullable', 'boolean'],
                 'show_on_home' => ['nullable', 'boolean'],
                 'sort_order'   => ['nullable', 'integer'],
@@ -28,6 +28,7 @@ class CategoryRequest extends BaseAdminRequest
         $this->merge([
             'is_active'    => $this->boolean('is_active'),
             'show_on_home' => $this->boolean('show_on_home'),
+            'bento_size'   => $this->input('bento_size') ?: 'md',
         ]);
     }
 }
