@@ -3,6 +3,25 @@
 @section('title', gt($product, 'meta_title') ?: gt($product, 'title'))
 @section('meta_description', gt($product, 'meta_description') ?: Str::limit(gt($product, 'short_description'), 160))
 
+@push('styles')
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <style>
+    /* Zoom-in cursor on hover over the main carousel images */
+    .product-gallery img {
+      cursor: zoom-in;
+      transition: opacity 0.2s ease-in-out;
+    }
+    .product-gallery img:hover {
+      opacity: 0.95;
+    }
+    .product-gallery a.glightbox {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+@endpush
+
 @section('content')
   <!-- Breadcrumb -->
   <div style="background:var(--white);border-bottom:1px solid var(--border);padding:0.75rem 0">
@@ -43,15 +62,19 @@
           <div id="productCarousel" class="carousel slide product-gallery" data-bs-ride="false" data-bs-interval="false">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{{ $coverUrl }}" alt="{{ gt($product, 'title') }}" loading="eager"
-                  style="aspect-ratio: 4/3; object-fit: cover;">
+                <a href="{{ $coverUrl }}" class="glightbox" data-gallery="product-gallery">
+                  <img src="{{ $coverUrl }}" alt="{{ gt($product, 'title') }}" loading="eager"
+                    style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
+                </a>
               </div>
               @if($gallery)
                 @foreach($gallery as $img)
                   <div class="carousel-item">
-                    <img src="{{ asset('storage/' . $img->image_path) }}"
-                      alt="{{ $img->alt_text ?? gt($product, 'title') }}" loading="lazy"
-                      style="aspect-ratio: 4/3; object-fit: cover;">
+                    <a href="{{ asset('storage/' . $img->image_path) }}" class="glightbox" data-gallery="product-gallery">
+                      <img src="{{ asset('storage/' . $img->image_path) }}"
+                        alt="{{ $img->alt_text ?? gt($product, 'title') }}" loading="lazy"
+                        style="aspect-ratio: 4/3; object-fit: cover; width: 100%;">
+                    </a>
                   </div>
                 @endforeach
               @endif
@@ -765,5 +788,19 @@
     });
   </script>
   @endif
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const lightbox = GLightbox({
+        selector: '.glightbox',
+        loop: true,
+        zoomable: true,
+        draggable: true,
+        openEffect: 'zoom',
+        closeEffect: 'zoom'
+      });
+    });
+  </script>
 
 @endpush
