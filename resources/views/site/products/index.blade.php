@@ -128,7 +128,7 @@
                                         <img src="{{ $product->cover_image ? asset('storage/' . $product->cover_image) : 'https://placehold.co/500x500/eeeeee/999999?text=Görsel+Yok' }}"
                                             alt="{{ gt($product, 'title') }}" loading="lazy" class="product-card-img-fit">
                                         @if($product->badge)
-                                            <span class="product-badge badge-new">{{ $product->badge }}</span>
+                                            <span class="product-badge badge-{{ $product->badge }}">{{ __('site.badge_' . $product->badge) }}</span>
                                         @endif
                                     </div>
                                     <div class="product-card-body">

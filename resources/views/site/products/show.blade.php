@@ -133,7 +133,7 @@
               </a>
             @endif
             @if($product->badge)
-              <span class="product-badge badge-new" style="position:static">{{ $product->badge }}</span>
+              <span class="product-badge badge-{{ $product->badge }}" style="position:static">{{ __('site.badge_' . $product->badge) }}</span>
             @endif
           </div>
 

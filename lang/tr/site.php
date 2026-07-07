@@ -210,6 +210,9 @@ return [
     'subject_math_workshop'  => 'Matematik Atölyesi',
     'subject_wood_decor'     => 'Ahşap Dekoratif Ürünler',
     'subject_other'          => 'Diğer',
+    'badge_new'              => 'Yeni',
+    'badge_campaign'         => 'Kampanya',
+    'badge_popular'          => 'Popüler',
     'price'                  => 'Fiyat',
 
 ];
