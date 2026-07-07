@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
     # Redirect external requests containing "/public/" to the clean URL
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*public/([^\s?]*) [NC]
     RewriteRule ^ /%1%2 [R=301,L]

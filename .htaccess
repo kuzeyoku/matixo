@@ -1,6 +1,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
     # Block access to sensitive files
     RedirectMatch 403 (?i)\.(env|git|htaccess|config)$
     RedirectMatch 403 (?i)/(composer\.json|composer\.lock|package\.json|artisan)$
