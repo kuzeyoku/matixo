@@ -36,6 +36,12 @@ $action = $isEdit ? route('admin.sliders.update', $item->id) : route('admin.slid
           </div>
         </div>
 
+        <div class="mb-3 mt-3">
+          <label class="form-label small fw-semibold">Sıra No</label>
+          <input type="number" name="sort_order" value="{{ old('sort_order', ($item ?? null)?->sort_order ?? 0) }}"
+            class="form-control form-control-sm" min="0">
+        </div>
+
         <div class="form-check mt-3">
           <input class="form-check-input" type="checkbox" name="is_active" value="1" id="is_active"
             @checked(old('is_active', $item->is_active ?? true))>
