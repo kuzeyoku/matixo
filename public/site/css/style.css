@@ -1867,6 +1867,46 @@ img { max-width: 100%; height: auto; }
   color: var(--turquoise);
 }
 
+/* ===================================
+   Sayfalama (Pagination) Tasarımı
+   =================================== */
+.pagination {
+  gap: 0.35rem;
+  margin-bottom: 0;
+}
+.pagination .page-item .page-link {
+  color: var(--primary);
+  background-color: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm) !important;
+  padding: 0.55rem 0.95rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: var(--transition);
+  box-shadow: none;
+}
+.pagination .page-item.active .page-link {
+  color: var(--white) !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+.pagination .page-item.disabled .page-link {
+  color: var(--text-muted);
+  background-color: transparent;
+  border-color: var(--border);
+  opacity: 0.5;
+}
+.pagination .page-item:not(.active):not(.disabled) .page-link:hover {
+  color: var(--white);
+  background-color: var(--turquoise);
+  border-color: var(--turquoise);
+}
+.pagination .page-item .page-link:focus {
+  box-shadow: 0 0 0 3px rgba(65,183,168,0.15);
+}
+
+
 
 
 
