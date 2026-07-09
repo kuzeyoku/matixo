@@ -68,9 +68,26 @@ abstract class BaseModel extends Model
             return $query;
         }
 
-        return $query->where(function ($q) use ($term, $columns) {
+        $locale = app()->getLocale();
+        $driver = $query->getConnection()->getDriverName();
+
+        return $query->where(function ($q) use ($term, $columns, $locale, $driver) {
             foreach ($columns as $col) {
-                $q->orWhere($col, 'like', "%{$term}%");
+                $colName = str_contains($col, '.') ? last(explode('.', $col)) : $col;
+
+                if (method_exists($this, 'isTranslatableAttribute') && $this->isTranslatableAttribute($colName)) {
+                    if ($driver === 'mysql') {
+                        $q->orWhereRaw("CAST({$col}->>'$.{$locale}' AS CHAR) COLLATE utf8mb4_turkish_ci LIKE ?", ["%{$term}%"]);
+                    } else {
+                        $q->orWhere("{$col}->{$locale}", 'like', "%{$term}%");
+                    }
+                } else {
+                    if ($driver === 'mysql') {
+                        $q->orWhereRaw("{$col} COLLATE utf8mb4_turkish_ci LIKE ?", ["%{$term}%"]);
+                    } else {
+                        $q->orWhere($col, 'like', "%{$term}%");
+                    }
+                }
             }
         });
     }
