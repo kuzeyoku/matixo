@@ -29,16 +29,16 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name'                 => 'required|string|max:100',
-            'email'                => 'required|email|max:150',
-            'phone'                => 'nullable|string|max:30',
-            'subject'              => 'required|string|max:200',
-            'message'              => 'required|string|max:5000',
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|max:150',
+            'phone' => 'nullable|string|max:30',
+            'subject' => 'required|string|max:200',
+            'message' => 'required|string|max:5000',
             'g-recaptcha-response' => 'nullable|string',
         ]);
 
         // ── reCAPTCHA v3 doğrulaması (key varsa) ─────────────────────
-        $siteKey   = env('RECAPTCHA_SITE_KEY');
+        $siteKey = env('RECAPTCHA_SITE_KEY');
         $secretKey = env('RECAPTCHA_SECRET_KEY');
 
         if ($siteKey && $secretKey) {
@@ -49,7 +49,7 @@ class ContactController extends Controller
 
             try {
                 $response = \Illuminate\Support\Facades\Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-                    'secret'   => $secretKey,
+                    'secret' => $secretKey,
                     'response' => $token,
                     'remoteip' => $request->ip()
                 ]);
@@ -72,15 +72,28 @@ class ContactController extends Controller
 
         // SMTP Bildirim Gönderimi
         if (setting('notify_new_message', '1') == '1') {
+            $emails = [];
+
+            // İletişim ayarlarındaki e-posta (contact_email)
+            $contactEmail = setting('contact_email');
+            if ($contactEmail) {
+                $emails[] = trim($contactEmail);
+            }
+
+            // Bildirim ayarlarındaki e-postalar (notify_emails)
             $emailsStr = setting('notify_emails');
             if ($emailsStr) {
-                $emails = array_filter(array_map('trim', explode(',', $emailsStr)));
-                if (!empty($emails)) {
-                    try {
-                        Mail::to($emails)->send(new NewContactMessage($messageInstance));
-                    } catch (\Throwable $e) {
-                        \Illuminate\Support\Facades\Log::error('SMTP Notification Error: ' . $e->getMessage());
-                    }
+                $notifyEmails = array_filter(array_map('trim', explode(',', $emailsStr)));
+                $emails = array_merge($emails, $notifyEmails);
+            }
+
+            $emails = array_unique(array_filter($emails));
+
+            if (!empty($emails)) {
+                try {
+                    Mail::to($emails)->send(new NewContactMessage($messageInstance));
+                } catch (\Throwable $e) {
+                    \Illuminate\Support\Facades\Log::error('SMTP Notification Error: ' . $e->getMessage());
                 }
             }
         }
